@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bgcolor changer</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family:sans-serif;
+            background-color:  rgb(156, 91, 216);
+            transition:  background-color 0.3s ease;
+        }
+      button {
+          outline: none;
+          border: none;
+          background: transparent;
+          background-color: black;
+          color: white;
+          font-size: 1.2em;
+          padding: 1em 2em;
+          border-radius: 100px;
+          cursor: pointer;
+      }
+      button:hover{
+          opacity: 0.8;
+          
+      }
+      p{
+          font-size: 20px;
+          font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Change</button>
+    <p id="color"  >
+        rgb(156, 91, 216)
+    </p>
+    <script>
+        const button = document.getElementsByTagName("button");
+        const color = document.getElementsByTagName("p");
+        const body = document.body;
+
+        button[0].addEventListener("click", ()=> {
+            let c1 = getrandom();
+            let c2 = getrandom();
+            let c3 = getrandom();
+
+            let ce = `rgb(${c1},${c2},${c3})`;
+            console.log(ce);
+            body.style.backgroundColor = ce;
+            color[0].textContent=ce;
+
+        } )  
+        
+        let getrandom = () => {return  Math.floor((Math.random()) * 256)};
+
+        
+      
+
+
+
+    </script>
+  </body>
+</html>
